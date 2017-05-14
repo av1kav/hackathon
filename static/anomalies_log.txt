@@ -1,0 +1,2 @@
+Detected at 12:15:10, CAM_01
+Detected at 10:34:59, CAM_04

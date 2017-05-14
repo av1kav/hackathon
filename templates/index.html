@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="static/style.css" type="text/css">
+	<script src="static/prototype.js"></script>
+    <script src="static/jcalendarview.js"></script>
+	
+	 <style>
+		video{
+		height: 240px;
+	}
+	</style>
+	<title>AtomicEyes CCTV</title>
+</head>
+
+<body>
+<!-- Banner -->
+<div class = "header-bar"><img src = "static/img/logo.png"/><div class = "title">Department of Atomic Energy: AtomicEyes CCTV</div></div>
+
+	<!-- Navbar -->
+	<ul>
+		<li>
+			<a class="active" href = "#">LIVE STREAM</a>
+		</li>
+		<li>
+			<a href = "location.html">EMPLOYEE LOCATION</a>
+		</li>
+		<li>
+			<a href = "suspect.html">SUSPICIOUS DETECTIONS</a>
+		</li>
+	</ul>
+	<div class = "content" style="padding-top: 10px; padding-bottom: 10px;">
+	<!-- Content -->
+	
+	<div class = "table-container" style="margin-left: auto;">
+	<table>
+		<tr>
+			<tc>
+			<td>
+				<video autoplay="true" src = "static/vid/01.mp4" type = "video/mp4"></video>
+			</td>
+			</tc>
+		
+			<tc>
+			<td>
+				<video autoplay="true" src = "static/vid/01.mp4" type = "video/mp4"></video>
+			</td>
+			</tc>
+			
+			<tc>
+			<td>
+				<video autoplay="true" src = "static/vid/01.mp4" type = "video/mp4"></video>
+			</td>
+			</tc>
+		
+		</tr>
+		
+		<!-- Next Row --->
+		
+		<tr>
+			<tc>
+			<td>
+				<video autoplay="true" id="videoElement"></video>
+			</td>
+			</tc>
+		
+			<tc>
+			<td>
+				<video autoplay="true" src = "static/vid/01.mp4" type = "video/mp4"></video>
+			</td>
+			</tc>
+			
+			<tc>
+			<td>
+				<video autoplay="true" src = "static/vid/01.mp4" type = "video/mp4"></video>
+			</td>
+			</tc>
+		</tr>
+		
+	</table>
+	
+	</div>
+	</div>
+	<script>
+		var video = document.querySelector("#videoElement");
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+ 
+		if (navigator.getUserMedia) {       
+			navigator.getUserMedia({video: true}, handleVideo, videoError);
+			}
+ 
+		function handleVideo(stream) {
+			video.src = window.URL.createObjectURL(stream);
+		}
+ 
+		function videoError(e) {
+			// do something
+		}
+	</script>
+	
+	
+</body>
+</html>

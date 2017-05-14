@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="static/style.css" type="text/css">
+	
+	
+	<title>AtomicEyes CCTV</title>
+	
+</head>
+
+
+
+<body>
+<style>
+	video{
+		height: 240px;
+	}
+</style>
+
+
+<!-- Banner -->
+<div class = "header-bar"><img src = "static/img/logo.png"/><div class = "title">Department of Atomic Energy: AtomicEyes CCTV</div></div>
+
+<!-- Navbar -->
+	<ul>
+		<li>
+			<a href="/">LIVE STREAM</a>
+		</li>
+		
+		<li>
+			<a class = "active" href="#">EMPLOYEE LOCATION</a>
+		</li>
+		<li>
+			<a href="/suspect.html">SUSPECT DETECTIONS</a>
+		</li>
+	</ul>
+
+	
+	<!-- Camera title -->
+		<div class="map-title">Location Map</div>
+<!--Content-->
+	<div class = "content-location">
+		
+	
+		<div class = "schematic-container">
+			<img src="static/img/blueprint.jpg"></img>
+			<div class = "puck-hide" style="margin-left: 120px; background-color: red;" id = "puck-red" ></div>
+			<div class = "puck-hide" style="margin-left: 240px; background-color: green; margin-top: -320px;" id = "puck-green" ></div>
+			<div class = "puck-hide" style="margin-left: 300px; background-color: blue;" id = "puck-blue" ></div>
+		</div>
+		<div class = "table-container">
+			<table>
+				<tr>
+					<tc><td>
+						<img src = "static/img/harrish.jpg" id = "harrish-click"></img>
+					</td></tc>
+					<tc><td>
+						<img src = "static/img/jeyaram.jpg" id = "jeyaram-click"></img>
+					</td></tc>
+					<tc><td>
+						<img src = "static/img/vanji.jpg" id = "vanji-click"></img>
+					</td></tc>
+					
+					<!--Next Row -->					
+				<tr>
+					<tc><td>
+						<img src = "static/img/shivaram.jpg" id = "shivaram-click"></img>
+					</td></tc>
+					<tc><td>
+						<img src = "static/img/reddy.jpg" id = "reddy-click"></img>
+					</td></tc>
+					<tc><td>
+						<img src = "static/img/sanjay.jpg" id = "sanjay-click"></img>
+					</td></tc>
+				</tr>
+					
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<!-- Hidden iframe for gettiing text -->
+	<iframe id='iframe' style="display: none" src = 'static/cam_1_log.txt' onload='readfile()'></iframe>
+	
+	<div class="log-files-container"><em><strong>Camera 1 log:</strong></em><div id="file"></div></div>
+
+	<script>
+		var harrish = document.getElementById("harrish-click");
+		var harrish_dot = document.getElementById("puck-red");
+		
+		var jeyaram = document.getElementById("jeyaram-click");
+		var jeyaram_dot = document.getElementById("puck-green");
+		
+		var vanji = document.getElementById("vanji-click");
+		var vanji_dot = document.getElementById("puck-blue");
+		
+		var i = 0;
+		var j = 0;
+		var k = 0;
+		
+		jeyaram.onclick = function(){
+			if(j==0){
+				jeyaram_dot.className = "puck-show";
+				j=1;
+			}
+			else{
+				jeyaram_dot.className = "puck-hide";
+				j=0;
+			}
+		}
+		
+		
+		harrish.onclick = function(){
+			if(i==0){
+				harrish_dot.className = "puck-show";
+				i=1;
+			}
+			else{
+				harrish_dot.className = "puck-hide";
+				i=0;
+			}
+		}
+		
+		vanji.onclick = function(){
+			if(k==0){
+				vanji_dot.className = "puck-show";
+				k = 1;
+			}
+			else{
+				vanji_dot.className = "puck-hide";
+				k=0;
+			}
+		}
+		
+		function readfile() {
+			/*alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);*/
+			document.getElementById('file').innerText = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML
+		
+		}
+			
+	</script>
+
+</body>
+</html>

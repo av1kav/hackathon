@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="static/style.css" type="text/css">
+	<title>AtomicEyes CCTV</title>	
+</head>
+
+<body>
+<style>
+	video{
+		height: 240px;
+	}
+</style>
+
+<!-- Banner -->
+<div class = "header-bar"><img src = "static/img/logo.png"/><div class = "title">Department of Atomic Energy: AtomicEyes CCTV</div></div>
+
+<!-- Navbar -->
+	<ul>
+		<li>
+			<a href="/">LIVE STREAM</a>
+		</li>
+		
+		<li>
+			<a class href="/location.html">EMPLOYEE LOCATION</a>
+		</li>
+		
+		<li>
+			<a class = "active" href="#">SUSPECT DETECTIONS</a>
+		</li>
+		
+		
+	</ul>
+
+	
+	<!-- Camera title -->
+	<div class="map-title">Suspicious Activity</div>
+<!--Content-->
+	<div class = "content-location">
+	
+		<div class = "schematic-container">
+			<img src="static/img/blueprint.jpg"></img>
+			<div class = "puck-show" style="margin-left: 190px; background-color: red; margin-top: -222px;" ></div>
+			<div class = "puck-show" style="margin-left: 340px; background-color: red; margin-top: -70px;" ></div>
+			<div class = "puck-show" style="margin-left: 220px; background-color: red; margin-top: -106px;" ></div>
+			<div class = "puck-show" style="margin-left: 67px; background-color: black; margin-top: -350px;" ></div>
+			<br>
+			<div class = "legend">
+				Red spheres denote detections; black sphere denotes the most recent suspicious detection.
+			</div>
+		</div>
+		
+		<div class = "table-container">
+			<table>
+				<tr>
+					<tc><td>
+						<img src = "static/img/harrish.jpg"></img>
+					</td></tc>
+					<tc><td>
+						<img src = "static/img/jeyaram.jpg"></img>
+					</td></tc>
+					<tc><td>
+						<img src = "static/img/vanji.jpg"></img>
+					</td></tc>
+					
+					<!--Next Row -->					
+				<tr>
+					<tc><td>
+						<img src = "static/img/shivaram.jpg"></img>
+					</td></tc>
+					<tc><td>
+						<img src = "static/img/reddy.jpg"></img>
+					</td></tc>
+					<tc><td>
+						<img src = "static/img/sanjay.jpg"></img>
+					</td></tc>
+				</tr>
+					
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<!-- Hidden iframe for gettiing text -->
+	<iframe id='iframe' style="display: none" src = 'static/anomalies_log.txt' onload='readfile()'></iframe>
+	
+
+	<!-- Anomaly Detection stats -->
+	<div class="anomaly-container"><strong><em>Suspicious detections:</em></strong><div id = "file"></div></div>
+
+	<script>
+	
+	function readfile() {
+			/*alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);*/
+			document.getElementById('file').innerText = document.getElementById('iframe').contentDocument.body.firstChild.innerHTML;
+		}
+		
+	</script>
+
+</body>
+</html>
